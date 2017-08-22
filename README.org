@@ -15,6 +15,15 @@ Next, /before you write or commit any code/, do the following:
    master=).
 2. Create a new branch for this assignment: =git branch assignment-name-here=.
 3. Switch to the branch: =git checkout assignment-name-here=.
+4. Make a new folder inside this one to store all the code and data for the
+   assignment.
+
+** Other useful repositories
+
+   - [[https://github.com/36-750/documents][36-750/documents]] contains the syllabus, assignment rubric, programming
+     practices checklists, and all lecture notes.
+   - [[https://github.com/36-750/problem-bank][36-750/problem-bank]] contains all the assignments you can choose from,
+     organized by topic. This repository will grow throughout the semester.
 
 ** Assignment submission instructions
 
