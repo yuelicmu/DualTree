@@ -58,8 +58,11 @@ Next, /before you write or commit any code/, do the following:
 *** To resubmit an assignment
 
     If the TAs determine you have not mastered an assignment and that it needs
-    revisions, they will mark your pull request "Changes requested". To make
-    revisions:
+    revisions, they will mark your pull request "Changes requested". If you
+    don't understand their comments, you should *always feel free to reply and
+    ask for clarification*. You can also consult us during office hours.
+
+    To make revisions:
 
     1. Make sure you're on the branch you used for the assignment (=git checkout
        assignment-name-here=).
