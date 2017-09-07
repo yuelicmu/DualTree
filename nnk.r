@@ -12,8 +12,8 @@ for(i in 1:nrow(X))  # for every point:
         w <- c(i, w[-n])
       }
       else if (  k < n  ) {
-        d <- c(d[1:(k-1)], x, d[k:(n-1)])
-        w <- c(w[1:(k-1)], i, w[k:(n-1)])
+        d[k] <- x
+        w[k] <- i
       } 
       else {
         d <- c(d[-n], x)
