@@ -1,5 +1,6 @@
 import argparse
 from urllib.request import urlopen
+# from urllib import *
 
 from markov_generate import markov_generate
 from text_ingest import text_ingest
@@ -23,7 +24,7 @@ parser.add_argument('order', help = 'the order of the Markov chain', type = int)
 parser.add_argument('length', help = 'the length of generated text', type = int)
 
 # output forms
-parser.add_argument('-p', '--print', help = 'whether to print the output on the screen', 
+parser.add_argument('-p', '--printout', help = 'whether to print the output on the screen', 
 	action = 'store_true')
 parser.add_argument('--save', help = 'whether to save the generated text', action = 'store_true')
 parser.add_argument('--path', help = 'path to store the generated text, \
@@ -38,6 +39,7 @@ args = parser.parse_args()
 if args.file:
 	sentence = text_ingest(args.file)
 elif args.feed:
+  	#html = urllib.request.urlopen(args.feed).read()
 	html = urlopen(args.feed).read()
 	sentence = feed_ingest(html)
 else:
@@ -73,7 +75,7 @@ else:
 	generated = markov_generate(chain, args.length)
 
 # print and save generated text
-if args.print:
+if args.printout:
 	print(' '.join(generated)+'\n')
 if args.save:
 	if args.path:
