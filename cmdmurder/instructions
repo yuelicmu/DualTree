@@ -1,0 +1,47 @@
+cat instructions
+grep 'CLUE' mystery/crimescene >clues.txt
+grep 'Annabel' mystery/people >annabel.txt
+cat annabel.txt
+
+head -n 40 mystery/streets/Hart_Place | tail -n 1 >> annabel.txt
+head -n 173 mystery/streets/Mattapan_Street | tail -n 1 >> annabel.txt
+head -n 179 mystery/streets/Buckingham_Place | tail -n 1 >> annabel.txt
+head -n 176 mystery/streets/Haley_Street | tail -n 1 >> annabel.txt
+cat Annabel.txt
+
+cat mystery/interviews/interview-47246024
+cat mystery/interviews/interview-9437737
+cat mystery/interviews/interview-699607
+cat mystery/interviews/interview-871877
+
+	Useful:
+	Interviewed Ms. Church at 2:04 pm.  Witness stated that she did not see anyone she could identify as the shooter, that she ran away as soon as the shots were fired.
+
+	However, she reports seeing the car that fled the scene.  Describes it as a blue Honda, with a license plate that starts with "L337" and ends with "9"
+
+
+grep -A 4 'License Plate L337.*9' mystery/vehicles | grep -A 3 -B 1 'Honda' | grep -B 2 -A 2 'Blue' > L3379
+grep -B 1 'Height: 6' L3379 | grep 'Owner:' > name
+
+	name: owners with blue Honda, liscense with L337.*9, taller than 6'
+
+cd mystery/memberships
+cat AAA Delta_Skymiles Terminal_City_Library Museum_of_Bash_History > combine
+cd ..
+cd ..
+#grep -c 'Katie Park' combine 
+
+sed 's/Owner: //' name > name1
+## to replace 'Owner: ' with '' in name, and store the resluts in name1
+
+## find the names in AAA, Delta SkyMiles, the local library, and the Museum of Bash History
+## find commom lines in name1 and these files
+
+grep -Ff name1 mystery/memberships/AAA | grep -Ff mystery/memberships/Delta_SkyMiles | grep -Ff mystery/memberships/Terminal_City_Library | grep -Ff mystery/memberships/Museum_of_Bash_History > common
+
+grep 'Jacqui Maher' mystery/people
+grep 'Jeremy Bowers' mystery/people
+
+
+
+
